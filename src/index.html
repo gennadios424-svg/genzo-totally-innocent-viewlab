@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Genzo ViewLab</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="titlebar">
+    <div class="brand"><span class="brand-mark">G</span><span>GENZO CHAT</span><span class="live"><i></i> LIVE</span></div>
+    <div class="window-actions">
+      <button id="pinBtn" title="Always on top">⌖</button>
+      <button id="minBtn" title="Minimize">—</button>
+      <button id="closeBtn" title="Close">×</button>
+    </div>
+  </header>
+
+  <section class="stream-stats">
+    <div class="viewer"><span class="eye">◉</span><strong id="viewerCount">32,000</strong><span>watching</span></div>
+    <div class="chat-rate" id="chatRate">FAST CHAT</div>
+  </section>
+
+  <main id="messages" class="messages" aria-live="polite"></main>
+
+  <footer>
+    <div class="footer-row">
+      <span id="communityCount">32,000 community profiles</span>
+      <span id="screenStatus" class="status">SCREEN OFF</span>
+    </div>
+    <div class="controls">
+      <button id="screenBtn" class="primary">Share screen</button>
+      <button id="pauseBtn">Pause chat</button>
+    </div>
+    <div id="notice" class="notice">Chat simulation ready.</div>
+  </footer>
+  <script src="renderer.js"></script>
+</body>
+</html>
