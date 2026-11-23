@@ -15,14 +15,11 @@
       <button id="closeBtn" title="Close">×</button>
     </div>
   </header>
-
   <section class="stream-stats">
     <div class="viewer"><span class="eye">◉</span><strong id="viewerCount">32,000</strong><span>watching</span></div>
     <div class="chat-rate" id="chatRate">FAST CHAT</div>
   </section>
-
   <main id="messages" class="messages" aria-live="polite"></main>
-
   <footer>
     <div class="footer-row">
       <span id="communityCount">32,000 community profiles</span>
@@ -31,9 +28,21 @@
     <div class="controls">
       <button id="screenBtn" class="primary">Share screen</button>
       <button id="pauseBtn">Pause chat</button>
+      <button id="settingsBtn" title="Chat settings">⚙</button>
     </div>
     <div id="notice" class="notice">Chat simulation ready.</div>
   </footer>
+  <section id="settingsPanel" class="settings-panel" hidden>
+    <div class="settings-heading"><strong>CHAT SETTINGS</strong><button id="settingsClose" aria-label="Close settings">×</button></div>
+    <label><input id="showBadges" type="checkbox" checked> Show user badges</label>
+    <label><input id="showLevels" type="checkbox" checked> Show chatter levels</label>
+    <label><input id="compactChat" type="checkbox"> Compact message spacing</label>
+    <label><input id="showEvents" type="checkbox" checked> Stream events (gifts, raids, subs)</label>
+    <button id="clearChat" class="settings-action">Clear chat messages</button>
+    <button id="testEvent" class="settings-action">Preview a stream event</button>
+    <p class="settings-note">Settings apply to this local session.</p>
+  </section>
   <script src="renderer.js"></script>
+  <script src="extras.js"></script>
 </body>
 </html>
