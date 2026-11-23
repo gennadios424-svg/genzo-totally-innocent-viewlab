@@ -1,15 +1,8 @@
 const $ = (id) => document.getElementById(id);
 const messages = $("messages");
-const namesA = ["Pixel","Shadow","Nova","Ghost","Frost","Alex","Mango","Orbit","Lunar","Vex","Toast","Echo","Raven","Noodle","Comet","Blitz","Misty","Turbo","Koda","Zenix"];
-const namesB = ["King","Plays","Live","TV","GG","XD","Fan","Main","_","YT","123","Rush","FPS","Vibes","Clips","Zero"];
+const handleStarts = ["fksaue","josaswe","larpox","mivaro","qenly","vexora","nupix","draxen","kavro","sylq","morz","tavik","xelno","briv","qorby","nexu","pavlo","zentry","lixor","wexly","norvi","kryzen","avixo","sorly","vanta","meloq","ruxen","dovik","kairo","yulix"];
 const colors = ["#d9a5ff","#79c7ff","#ffb36b","#78dca7","#e7a0b5","#f2d36f","#9da7ff","#ff8f8f"];
-const reactions = [
-  "YOOOO", "W PLAY 🔥", "NAHHH 💀", "CLIP THAT", "WHAT JUST HAPPENED", "LMAOOO",
-  "that was close", "CHAT??", "no way 😭", "clean", "bro is locked in", "I WAS NOT READY",
-  "actually insane", "one more time", "huge W", "that's an L", "WAIT WAIT WAIT",
-  "how did that work", "we take those", "this is getting interesting", "BRO LOOK",
-  "I leave for 2 seconds", "nah you're joking", "someone explain 😭", "absolute cinema"
-];
+const reactions = ["yo what was that 😭","W","LMAOOO","nahhh 💀","clip it","clean play","bro??","WAIT","im crying","that timing tho","no shot","we take those","actual cinema","HELLO??","HUH","he really did that","chat is moving fast","anyone else see that","im dead 💀","huge W","that was almost bad","locked in fr","one more try","this stream is wild","bro got distracted","respect the confidence","not even close","okay that was nice","WHY 😭","imagine missing that","someone explain","been here since earlier","first time catching the stream","audio check?","what game is this","this is oddly satisfying","nah run that back","good save","we are so back","L take","W community","bro is cooking","I looked away for one second","that escalated quickly"];
 const conversations = [
   ["PixelKing","that was close"],["Shadow","nah he had that"],["Nova","CHAT LOOK AT THIS"],
   ["Alex","I knew that was coming"],["Ghost","clip it"],["Toast","😭😭😭"],
@@ -26,7 +19,8 @@ function hash(n) { let x = Math.imul(n ^ 0x45d9f3b, 0x45d9f3b); x = Math.imul(x 
 function profileFor(id) {
   if (profiles.has(id)) return profiles.get(id);
   const h = hash(id);
-  const name = namesA[h % namesA.length] + namesB[(h >>> 5) % namesB.length] + (h % 7 === 0 ? String(h % 999) : "");
+  const stem = handleStarts[h % handleStarts.length];
+  const name = stem + (h % 1000000).toString().padStart(3, "0") + (h % 11 === 0 ? "_" + ((h >>> 8) % 99) : "");
   const roll = (h >>> 10) % 100;
   const badges = [];
   if (roll < 3) badges.push(["MOD","mod"]);
@@ -90,7 +84,7 @@ function updateViewers() {
   $("viewerCount").dataset.value = String(next);
   $("viewerCount").textContent = next.toLocaleString("en-US");
 }
-const chatLoop = setInterval(() => { if (!paused) { const burst = 1 + Math.floor(Math.random() * 3); for (let i=0;i<burst;i++) nextMessage(); } }, 420);
+const chatLoop = setInterval(() => { if (!paused) { const burst = 1 + Math.floor(Math.random() * 3); for (let i=0;i<burst;i++) nextMessage(); } }, 180);
 setInterval(updateViewers, 1700);
 for (let i=0;i<18;i++) nextMessage();
 
