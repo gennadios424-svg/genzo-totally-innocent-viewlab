@@ -1,0 +1,21 @@
+{
+  "name": "genzo-viewlab",
+  "version": "3.0.0",
+  "description": "Local Twitch-style AI companion overlay and chat simulator",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win nsis"
+  },
+  "devDependencies": {
+    "electron": "^37.2.6",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "com.genzo.viewlab",
+    "productName": "Genzo ViewLab",
+    "directories": { "output": "dist" },
+    "files": ["src/**/*", "package.json"],
+    "win": { "target": "nsis" }
+  }
+}
