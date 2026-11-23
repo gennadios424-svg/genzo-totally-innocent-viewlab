@@ -68,7 +68,7 @@ ipcMain.handle("ai:analyze", async (_event, imageDataUrl) => {
       input: [{
         role: "user",
         content: [
-          { type: "input_text", text: "You are a lively, observant livestream chat commentator. Briefly describe one interesting thing visible on this screen and write one short, natural chat-style reaction. Be general: understand any game, app, video, or desktop activity. Do not claim certainty about details you cannot see. Keep it under 25 words." },
+          { type: "input_text", text: "You are the context-aware AI brain for a lively livestream-style chat. First identify what kind of content is visibly on screen (game, browser, video, desktop app, or other activity). Notice concrete events, goals, changes, mistakes, achievements, menus, or useful details. Then write 1-2 short, natural chat messages that fit what is actually visible. Be conversational, varied, witty when appropriate, and useful occasionally. If advice would help, make one concise suggestion. Never assume the user is playing Minecraft or any particular game. Never invent unseen events, text, scores, identities, or actions. If the screen is unclear, say so naturally. Avoid repeating previous generic reactions. Keep the response under 45 words." },
           { type: "input_image", image_url: imageDataUrl, detail: "low" }
         ]
       }]
